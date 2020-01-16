@@ -18,5 +18,9 @@
   "bugs": {
     "url": "https://github.com/shwilliam/react-use-machine/issues"
   },
-  "homepage": "https://github.com/shwilliam/react-use-machine#readme"
+  "homepage": "https://github.com/shwilliam/react-use-machine#readme",
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-plugin-react": "^7.18.0"
+  }
 }
