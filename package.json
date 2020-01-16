@@ -8,6 +8,8 @@
   ],
   "scripts": {
     "build": "tsc",
+    "build:watch": "tsc --watch",
+    "demo:cp": "rm -r ./demo/src/dist && cp -r ./dist ./demo/src/dist",
     "demo": "cd demo && npm start"
   },
   "repository": {

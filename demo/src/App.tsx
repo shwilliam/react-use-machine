@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react'
-import useMachine from './useMachine'
+import useMachine from './dist'
 
-const App = () => {
+const App: React.FC = () => {
   const [state, dispatch] = useMachine(
     {
       IDLE: {
@@ -66,4 +66,4 @@ const App = () => {
   )
 }
 
-export default App
+export default App;
