@@ -1,12 +1,22 @@
-import {useReducer} from 'react'
+import {useReducer, useState} from 'react'
 
-const useMachine = (machine: IMachine, initialState: State): [State, React.Dispatch<State>] => {
+const useMachine = (machine: IMachine, initialState: State): IRetVal => {
+  const [event, setEvent] = useState()
   const [state, dispatch] = useReducer(
-    (s: State, e: Event): State => (machine[s] && machine[s][e]) || s,
+    (s: State, e: Event): State => {
+      if (machine[s] && machine[s][e]) {
+        setEvent(e)
+        return machine[s][e]
+      }
+      setEvent(null)
+      return s
+    },
     initialState,
   )
 
-  return [state, dispatch]
+  return {
+    state, event, dispatch
+  }
 }
 
 type State = string
@@ -19,6 +29,12 @@ interface IMachine {
 
 interface IEvent {
   [event: string]: State
+}
+
+interface IRetVal {
+  state: State,
+  event: Event,
+  dispatch: React.Dispatch<State>
 }
 
 export default useMachine
