@@ -1,7 +1,7 @@
 {
   "name": "react-use-machine",
   "version": "0.1.0",
-  "description": "A finite state machine helper hook",
+  "description": "A finite-state machine helper hook",
   "main": "dist/index.js",
   "files": [
     "dist/*"
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "tsc",
     "build:watch": "tsc --watch",
-    "demo:cp": "rm -r ./demo/src/dist && cp -r ./dist ./demo/src/dist",
+    "build:docs": "typedoc --out docs src",
+    "demo:setup": "rm -r ./demo/src/dist && cp -r ./dist ./demo/src/dist",
     "demo": "cd demo && npm start"
   },
   "repository": {
@@ -34,6 +35,7 @@
     "@types/react": "^16.9.17",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.0",
+    "typedoc": "^0.16.6",
     "typescript": "^3.7.4"
   }
 }
