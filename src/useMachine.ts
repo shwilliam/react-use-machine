@@ -8,7 +8,6 @@ const useMachine = (machine: IMachine, initialState: State): IRetVal => {
         setEvent(e)
         return machine[s][e]
       }
-      setEvent(null)
       return s
     },
     initialState,
