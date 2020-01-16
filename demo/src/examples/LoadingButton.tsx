@@ -38,7 +38,7 @@ const LoadingButton: React.FC = () => {
       default:
         break
     }
-  }, [state, dispatch])
+  }, [event, dispatch])
 
   return (
     <button

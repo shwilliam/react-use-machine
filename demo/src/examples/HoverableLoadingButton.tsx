@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 import useMachine from '../dist'
 
 const HoverableLoadingButton: React.FC = () => {
-  const {state, event,dispatch} = useMachine(
+  const {state, event, dispatch} = useMachine(
     {
       IDLE: {
         DATA_REQUESTED: 'LOADING',
@@ -38,7 +38,7 @@ const HoverableLoadingButton: React.FC = () => {
       default:
         break
     }
-  }, [state, event, dispatch])
+  }, [event, dispatch])
 
   return (
     <main>

@@ -55,7 +55,7 @@ const LoadingButton = () => {
       default:
         break
     }
-  }, [state, dispatch])
+  }, [event, dispatch])
 
   return (
     <button
