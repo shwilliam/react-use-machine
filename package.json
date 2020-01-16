@@ -3,7 +3,9 @@
   "version": "0.1.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "demo": "cd demo && npm start"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shwilliam/react-use-machine.git"
