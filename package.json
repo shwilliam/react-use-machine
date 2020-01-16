@@ -1,0 +1,20 @@
+{
+  "name": "react-use-machine",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shwilliam/react-use-machine.git"
+  },
+  "keywords": [
+    "react"
+  ],
+  "author": "William L <w-lindvall@outlook.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/shwilliam/react-use-machine/issues"
+  },
+  "homepage": "https://github.com/shwilliam/react-use-machine#readme"
+}
