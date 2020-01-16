@@ -12,6 +12,8 @@ $ npm i react-use-machine
 
 The following example demonstrates how to use the `useMachine` hook in an example button component that fetches data on click:
 
+[![useMachine demo](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/react-use-machine-1-lk2dj?fontsize=14&hidenavigation=1&theme=dark)
+
 ```jsx
 import React from 'react'
 import useMachine from 'react-use-machine'
