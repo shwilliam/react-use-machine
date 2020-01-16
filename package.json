@@ -1,9 +1,13 @@
 {
   "name": "react-use-machine",
   "version": "0.1.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A finite state machine helper hook",
+  "main": "dist/index.js",
+  "files": [
+    "dist/*"
+  ],
   "scripts": {
+    "build": "tsc",
     "demo": "cd demo && npm start"
   },
   "repository": {
@@ -11,7 +15,8 @@
     "url": "git+https://github.com/shwilliam/react-use-machine.git"
   },
   "keywords": [
-    "react"
+    "react",
+    "hook"
   ],
   "author": "William L <w-lindvall@outlook.com>",
   "license": "MIT",
@@ -19,8 +24,14 @@
     "url": "https://github.com/shwilliam/react-use-machine/issues"
   },
   "homepage": "https://github.com/shwilliam/react-use-machine#readme",
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  },
   "devDependencies": {
+    "@types/react": "^16.9.17",
     "eslint": "^6.8.0",
-    "eslint-plugin-react": "^7.18.0"
+    "eslint-plugin-react": "^7.18.0",
+    "typescript": "^3.7.4"
   }
 }
