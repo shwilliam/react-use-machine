@@ -10,7 +10,7 @@ $ npm i react-use-machine
 
 ## Usage
 
-The following example demonstrates how to use the `useMachine` hook in an example button component that fetched data on click:
+The following example demonstrates how to use the `useMachine` hook in an example button component that fetches data on click:
 
 ```jsx
 import React from 'react'
@@ -68,7 +68,7 @@ const LoadingButton = () => {
 
 ## Development
 
-To start local development, simply install npm dependencies (`npm i`) and run `npm run build:watch` to watch ts files in `src/`. Built files can be found in `dist/`
+To start local development, simply install npm dependencies (`npm i`) and run `npm run build:watch` to watch ts files in `src/`. Built files can be found in `dist/`.
 
 ## Demo
 
