@@ -2,19 +2,19 @@ import React, {useEffect} from 'react'
 import useMachine from '../dist'
 
 const HoverableLoadingButton: React.FC = () => {
-  const [state, dispatch] = useMachine(
+  const {state, event,dispatch} = useMachine(
     {
       IDLE: {
-        CLICK: 'DATA_REQUESTED',
+        DATA_REQUESTED: 'LOADING',
         MOUSE_ENTER: 'HOVERING',
       },
       HOVERING: {
-        CLICK: 'DATA_REQUESTED',
+        DATA_REQUESTED: 'LOADING',
         MOUSE_LEAVE: 'IDLE',
       },
-      DATA_REQUESTED: {
-        SUCCESS: 'SUCCESS',
-        ERROR: 'ERROR',
+      LOADING: {
+        DATA_SUCCESS: 'SUCCESS',
+        DATA_ERROR: 'ERROR',
       },
       SUCCESS: {
         RETRY: 'IDLE',
@@ -27,29 +27,29 @@ const HoverableLoadingButton: React.FC = () => {
   )
 
   useEffect(() => {
-    switch (state) {
+    switch(event) {
       case 'DATA_REQUESTED':
-        // load data
-        setTimeout(
-          () => dispatch(Math.random() > 0.5 ? 'SUCCESS' : 'ERROR'),
-          500,
-        )
+      // load data
+      setTimeout(
+        () => dispatch(Math.random() > 0.5 ? 'DATA_SUCCESS' : 'DATA_ERROR'),
+        500,
+      )
         break
       default:
         break
     }
-  }, [state, dispatch])
+  }, [state, event, dispatch])
 
   return (
     <main>
       <p>state: {state}</p>
 
-      {['IDLE', 'HOVERING', 'DATA_REQUESTED'].includes(state) ? (
+      {['IDLE', 'HOVERING', 'LOADING'].includes(state) ? (
         <button
           onMouseEnter={() => dispatch('MOUSE_ENTER')}
           onMouseLeave={() => dispatch('MOUSE_LEAVE')}
-          onClick={() => dispatch('CLICK')}
-          disabled={state === 'DATA_REQUESTED'}
+          onClick={() => dispatch('DATA_REQUESTED')}
+          disabled={state === 'LOADING'}
         >
           load data
         </button>

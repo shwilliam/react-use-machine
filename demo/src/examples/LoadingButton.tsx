@@ -2,14 +2,14 @@ import React, {useEffect} from 'react'
 import useMachine from '../dist'
 
 const LoadingButton: React.FC = () => {
-  const [state, dispatch] = useMachine(
+  const {state, event, dispatch} = useMachine(
     {
       IDLE: {
         DATA_REQUESTED: 'LOADING',
       },
       LOADING: {
-        SUCCESS: 'SUCCESS',
-        ERROR: 'ERROR',
+        DATA_SUCCESS: 'SUCCESS',
+        DATA_ERROR: 'ERROR',
       },
       SUCCESS: {
         DATA_REQUESTED: 'LOADING',
@@ -22,17 +22,17 @@ const LoadingButton: React.FC = () => {
   )
 
   useEffect(() => {
-    switch (state) {
-      case 'LOADING':
+    switch (event) {
+      case 'DATA_REQUESTED':
         fetch('https://swapi.co/api/people/1')
           .then(d => d.json())
           .then(d => {
             console.log('data: ', d)
-            dispatch('SUCCESS')
+            dispatch('DATA_SUCCESS')
           })
           .catch(e => {
             console.log('err: ', e)
-            dispatch('ERROR')
+            dispatch('DATA_ERROR')
           })
         break
       default:
