@@ -11,7 +11,8 @@
     "build:watch": "tsc --watch",
     "build:docs": "typedoc --out docs src",
     "demo:setup": "rm -r ./demo/src/dist && cp -r ./dist ./demo/src/dist",
-    "demo": "cd demo && npm start"
+    "demo": "cd demo && npm start",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -32,9 +33,16 @@
     "react-dom": "^16.12.0"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.9.6",
+    "@babel/preset-react": "^7.9.4",
+    "@testing-library/react-hooks": "^3.2.1",
     "@types/react": "^16.9.17",
+    "babel-jest": "^25.5.1",
     "eslint": "^6.8.0",
     "eslint-plugin-react": "^7.18.0",
+    "jest": "^25.5.4",
+    "react": "^16.13.1",
+    "react-test-renderer": "^16.13.1",
     "typedoc": "^0.16.6",
     "typescript": "^3.7.4"
   }
